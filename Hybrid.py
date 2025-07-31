@@ -8,7 +8,6 @@ from einops import rearrange, repeat
 from mamba_ssm.ops.selective_scan_interface import selective_scan_fn, selective_scan_ref
 
 ##########################################################
-# MambaIR
 def window_partition(x, window_size):
     """
     Args:
@@ -706,11 +705,11 @@ class Spectral_Smoother(nn.Module):
     def __init__(self, input_size=1, hidden_size=16, num_layers=1, bidirectional=True):
         super().__init__()
         self.gru = nn.GRU(
-            input_size=input_size,  # 输入特征的维度
-            hidden_size=hidden_size,  # 隐藏层的大小
-            num_layers=num_layers,  # GRU 层数
-            batch_first=True,  # 输入和输出的第一个维度是批量大小
-            bidirectional=bidirectional  # 是否使用双向 GRU
+            input_size=input_size,
+            hidden_size=hidden_size,
+            num_layers=num_layers,
+            batch_first=True,
+            bidirectional=bidirectional
         )
 
         hidden = hidden_size if bidirectional is not True else hidden_size*2
@@ -735,16 +734,15 @@ class Spectral_Strategy(nn.Module):
         output = torch.zeros_like(x[:, :, 0, 0])
         judge = self.discriminator(x)
         mask = (judge <= self.threshold).squeeze(1)
-        if mask.any():  # 确保有数据需要平滑
+        if mask.any():
             x_to_smooth = x[mask]
             spe_to_smooth = self.smooth(x_to_smooth)
-            output[mask] = spe_to_smooth  # 将平滑后的数据填充到对应位置
+            output[mask] = spe_to_smooth
 
-        # 处理不需要平滑的数据
-        if (~mask).any():  # 确保有数据不需要平滑
+        if (~mask).any():
             x_to_keep = x[~mask]
-            spe_to_keep = torch.mean(x_to_keep, dim=(2, 3))  # 对不需要平滑的数据取均值
-            output[~mask] = spe_to_keep  # 将不需要平滑的数据填充到对应位置
+            spe_to_keep = torch.mean(x_to_keep, dim=(2, 3))
+            output[~mask] = spe_to_keep
 
         return output
 
