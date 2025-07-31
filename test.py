@@ -186,7 +186,6 @@ if __name__ == '__main__' :
     test_time = end_time - start_time
     print('cost-time:', (test_time / float(num_size)))
 
-    # # 保存结果到 CSV
     # df = pd.DataFrame(metrics_list)
     # csv_path = f"results_{name}_{noise}.csv"
     # df.to_csv(csv_path, index=False)
