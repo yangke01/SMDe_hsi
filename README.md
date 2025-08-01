@@ -4,4 +4,4 @@ This project **heavily relies on the data loading and training framework of [HSI
 For better clarity and naming consistency, we also provide a cleaned-up and standardized version in `SMDe.py`.
 
 📦 Pre-trained checkpoints and testing datasets can be downloaded from the following link:  
-[Download Link (Google Drive/Baidu Netdisk/Other)](https://your.download.link)
+[Baidu Netdisk](https://pan.baidu.com/s/1ZQfjGeDEdHvA6ctDgWLeWA?pwd=1111)
