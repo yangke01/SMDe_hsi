@@ -506,13 +506,11 @@ class AttentiveLayer(nn.Module):
         b, n, c = x.shape
         c3 = 3 * c
 
-        # part2: Attentive State Space
         shortcut = x
         x_aca = self.assm(self.norm3(x), x_size, self.embeddingA) + x
         x = x_aca + self.convffn2(self.norm4(x_aca), x_size)
         x = shortcut * self.scale2 + x
 
-        # part1: Window-MHSA
         shortcut = x
         x = self.norm1(x)
         qkv = self.wqkv(x)
