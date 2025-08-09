@@ -15,5 +15,5 @@ For better clarity and naming consistency, we also provide a cleaned-up and stan
 [Urban](https://doi.org/10.1117/12.283843)
 
 Please modify the dataset paths to your local storage location.
-Use 'train.py' to train the model, and 'test.py' to test the model.
+Use `train.py` to train the model, and `test.py` to test the model.
 
