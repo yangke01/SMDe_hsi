@@ -7,21 +7,10 @@ For better clarity and naming consistency, we also provide a cleaned-up and stan
 [Baidu Netdisk](https://pan.baidu.com/s/1ZQfjGeDEdHvA6ctDgWLeWA?pwd=1111)
 
 📂 Datasets
-We use the following hyperspectral datasets in our experiments:
+ICVL (https://doi.org/10.1007/978-3-319-46478-7_2)
+CAVE (https://doi.org/10.1109/TIP.2010.2046811)
+Urban (https://doi.org/10.1117/12.283843)
 
-ICVL (DOI)
+Please modify the dataset paths to your local storage location.
+Use train.py to train the model, and test.py to test the model.
 
-CAVE (DOI)
-
-Urban (DOI)
-
-🚀 Usage
-Modify dataset paths
-Update the dataset paths in the configuration files or scripts to match your local storage location.
-
-Train the model
-bash
-python train.py
-Test the model
-bash
-python test.py
