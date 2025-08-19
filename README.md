@@ -23,3 +23,33 @@ Use `train.py` to train the model, and `test.py` to test the model.
 First, install the required dependencies:  
 ```bash
 pip install -r requirements.txt
+
+###  Train
+Before training, modify the paths in the configuration file:
+- `train_root`: set to your training dataset path
+- `test_root`: set to your validation dataset path
+
+Run the following command:
+```bash
+python train.py
+
+###  Test
+Before testing, modify the following parameters in the configuration file:
+- `test_root`: set to the parent directory of your test dataset
+- `resume_path`: set to the checkpoint file path to load the trained model
+- `test_name`: set to the name of your test dataset (combined with test_root to form the complete path)
+
+Run the following command:
+```bash
+python test.py
+
+###  Using Our Model
+```bash
+import torch
+from SMDe import smde
+
+net = smde()
+x = torch.randn(4, 1, 31, 64, 64)
+y = net(x)
+print(y.shape)
+
