@@ -49,7 +49,7 @@ import torch
 from SMDe import smde
 
 net = smde()
-x = torch.randn(4, 31, 64, 64)
+x = torch.randn(8, 31, 64, 64)
 y = net(x)
 print(y.shape)
 ```
