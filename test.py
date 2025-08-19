@@ -133,8 +133,8 @@ if __name__ == '__main__' :
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     # device = 'cpu'
 
-    model = sert_base()   ## model ##
-    name = 'SERTv2'    ## name of model ##
+    model = hybrid()   ## model ##
+    name = 'SMDe'    ## name of model ##
 
     model.to(device)
     use_chw = model.use_2dconv
@@ -192,4 +192,5 @@ if __name__ == '__main__' :
     # csv_path = f"results_{name}_{noise}.csv"
     # df.to_csv(csv_path, index=False)
     # print(f"Saved metrics to {csv_path}")
+
 
