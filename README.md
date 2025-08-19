@@ -17,3 +17,9 @@ For better clarity and naming consistency, we also provide a cleaned-up and stan
 Please modify the dataset paths to your local storage location.
 Use `train.py` to train the model, and `test.py` to test the model.
 
+##  Usage
+
+###  Installation
+First, install the required dependencies:  
+```bash
+pip install -r requirements.txt
