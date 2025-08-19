@@ -14,18 +14,19 @@ from hsir.trainer import Trainer
 from hsir.scheduler import MultiStepSetLR, adjust_learning_rate, get_learning_rate
 
 from pydoc import locate
+from Hybrid import hybrid
 
-from models.HSIDCNN import hsid_cnn
-from models.QRNN3D import qrnn3d
-from models.T3SC import build_t3sc
-from models.TRQ3D import trq3d
-from models.SST import sst
-from models.SERT import sert_base
-from models.testnet import testnet
-from models.Hybrid import hybrid
-from models.SSUMamba import ssumamba
-from models.rethink import yknet
-from models.RGSST import kknet
+# from models.HSIDCNN import hsid_cnn
+# from models.QRNN3D import qrnn3d
+# from models.T3SC import build_t3sc
+# from models.TRQ3D import trq3d
+# from models.SST import sst
+# from models.SERT import sert_base
+# from models.testnet import testnet
+# from models.Hybrid import hybrid
+# from models.SSUMamba import ssumamba
+# from models.rethink import yknet
+# from models.RGSST import kknet
 
 
 if __name__ == '__main__' :
@@ -49,8 +50,8 @@ if __name__ == '__main__' :
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     # model = newmixer()   ## model ##
     # name = 'NewMixer'    ## name of model ##
-    model = kknet()   ## model ##
-    name = 'KKNET'    ## name of model ##
+    model = hybrid()   ## model ##
+    name = 'SMDe'    ## name of model ##
     use_chw = model.use_2dconv
     # schedule_path = 'hsir.schedule.denoise_mixer_complex'  ## shcedule ##
     # schedule_path = 'hsir.schedule.denoise_hybrid_complex'  ## shcedule ##
@@ -163,4 +164,5 @@ if __name__ == '__main__' :
         trainer.save_checkpoint('model_latest.pth')
 
         lr_scheduler.step()
+
 
