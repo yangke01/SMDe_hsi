@@ -24,6 +24,7 @@ First, install the required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+install mamba_ssm from the following link: [mamba_ssm](https://github.com/state-spaces/mamba/releases?page=2)
 ###  Train
 Before training, modify the paths in the configuration file:
 - `train_root`: set to your training dataset path
