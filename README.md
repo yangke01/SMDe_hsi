@@ -26,7 +26,7 @@ pip install -r requirements.txt
 ```
 install mamba_ssm from the following link: [mamba_ssm](https://github.com/state-spaces/mamba/releases?page=2)
 ###  Train
-Before training, modify the paths in the configuration file:
+Before training, modify the paths in **train.py**:
 - `train_root`: set to your training dataset path
 - `test_root`: set to your validation dataset path
 
@@ -35,7 +35,7 @@ Run the following command:
 python train.py
 ```
 ###  Test
-Before testing, modify the following parameters in the configuration file:
+Before testing, modify the following parameters in **test.py**:
 - `test_root`: set to the parent directory of your test dataset
 - `resume_path`: set to the checkpoint file path to load the trained model
 - `test_name`: set to the name of your test dataset (combined with test_root to form the complete path)
