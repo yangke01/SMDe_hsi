@@ -3,7 +3,7 @@ This project **heavily relies on the data loading and training framework of [HSI
 📌 The model defined in `hybrid.py` is the one actually used during training.  
 For better clarity and naming consistency, we also provide a cleaned-up and standardized version in `SMDe.py`.
 
-📦 Pre-trained checkpoints| Testing datasets | Denoised results can be downloaded from the following link:  
+📦 Pre-trained checkpoints | Testing datasets | Denoised results can be downloaded from the following link:  
 [Baidu Netdisk](https://pan.baidu.com/s/1ZQfjGeDEdHvA6ctDgWLeWA?pwd=1111)
 
 📂 Datasets
